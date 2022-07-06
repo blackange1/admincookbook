@@ -5,6 +5,7 @@ class Category(models.Model):
     name = models.CharField(max_length=100)
 
     class Meta:
+        # set the plural text for a model
         verbose_name_plural = "Categories"
 
     def __str__(self):
@@ -13,6 +14,13 @@ class Category(models.Model):
 
 class Origin(models.Model):
     name = models.CharField(max_length=100)
+
+    # show calculated fields on listview page
+    # def hero_count(self):
+    #     return self.hero_set.count()
+    #
+    # def villain_count(self):
+    #     return self.villain_set.count()
 
     def __str__(self):
         return self.name
@@ -50,6 +58,7 @@ class Entity(models.Model):
 class Hero(Entity):
 
     class Meta:
+        # set the plural text for a model
         verbose_name_plural = "Heroes"
 
     is_immortal = models.BooleanField(default=True)
